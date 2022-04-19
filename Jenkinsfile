@@ -12,7 +12,7 @@ pipeline {
         }
         stage('test') {
             steps {
-                sh 'cd jacoco/java-project mvn test'
+                sh 'cd jacoco/java-project && mvn test'
             }
         }        
     }
