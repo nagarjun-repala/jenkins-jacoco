@@ -1,0 +1,20 @@
+version: '3'
+services:
+    jenkinstest:
+        container_name: jenkins
+        image: jenkins:v1
+        build:
+            context: Jenkins
+        ports:
+            - "8080:8080"
+            - "50000:50000"
+        volumes:
+            - "jenkins:/var/jenkins_home"
+        # environment:
+        #     - CASC_JENKINS_CONFIG=/jenkins_config/jenkins.yaml
+        networks:
+            - net
+networks:
+  net:
+volumes:
+  jenkins:
