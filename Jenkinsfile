@@ -7,12 +7,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn package'
+                sh 'cd jacoco/java-project && mvn package'
             }
         }
         stage('test') {
             steps {
-                sh 'mvn test'
+                sh 'cd jacoco/java-project mvn test'
             }
         }        
     }
